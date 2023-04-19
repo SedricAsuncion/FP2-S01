@@ -8,6 +8,7 @@
 ## ----- Functions ----- ##
 def file_create():
     with open('Player_Data.txt', 'w') as created:
-        created.write('Created')
+        created.write['User: ']
 
-file_create()
+def main():
+    file_create()
