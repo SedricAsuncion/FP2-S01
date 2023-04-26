@@ -3,7 +3,24 @@
 #Sedric Asuncion
 #-----------------------------
 
-## ----- Import ----- ##
+## ----- Questions ----- ##
+# What are the benefits of external files for your program?
+#
+# Data Persistence: Able to access the data as it's saved on a file that exists outside of the code 
+# Seperation of Concerens: Seperating the data from the program makes the code easier to read
+# Sharing Data: Able to share data between programs and other people
+#
+# I'm thinking of this project as a 'concept', so my answers are also conceptual. The way it is right now,
+# using external files doesn't matter much, but if scaled larger, it would be easier to maintain. I used append
+# so I can add data to the file without having to rewrite the entire file.
+#
+# External Files are being used in the code as I'm creating a .txt file with my first function,
+# appending onto that file for the second function, and then printing the file
+# on the third function.
+
+## ----- Thoughts on Code ----- ##
+# I could have just wrote everything using 'write' mode in opening the file, but I added
+# 'append' mode to the mix, for more practice on it, and future practical use I might have
 
 ## ----- Functions ----- ##
 def inputs():
@@ -27,6 +44,7 @@ def file_create():
         crt.write('\nRace: ')
         crt.write('\nJob: ')
         crt.write('\nLevel: ')
+        crt.close()
     #Returns the values, we need those in next functions
     return Player, Race, Job, Level
 
@@ -44,6 +62,7 @@ def file_append():
         lines[3] = lines[3].strip() + f' {Level}\n'
         app.seek(0)
         app.writelines(lines)
+        app.close()
 
     #Returns the file_name value
     x = Player
@@ -55,6 +74,7 @@ def file_read():
     #Reads and prints file and values
     with open(f"{Player}_Data.txt", 'r') as rd:
         print(rd.read())
+        rd.close()
         
 
 ## ----- Main Code ----- ##
